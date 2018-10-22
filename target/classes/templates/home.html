@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+</head>
+<body>
+<table>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-sm">
+                    <thead>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Descripcion
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="table-success" th:each="cliente : ${clientes}">
+                        <td th:text="${cliente.id}"></td>
+                        <td th:text="${cliente.name}"></td>
+                        <td th:text="${cliente.email}"></td>
+                        <td th:text="${cliente.observations}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <a href="/add"><button type="button" class="btn btn-primary" >
+                    Nuevo Cliente
+                </button></a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <tr>
+    </tr>
+
+</table>
+
+
+
+
+
+</body>
+
+</html>
+
