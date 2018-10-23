@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping("/admin")
 public class MainController {
     @Autowired
     private ClienteRepository r;
@@ -22,7 +23,7 @@ public class MainController {
         return r.findAll();
     }
 
-    @GetMapping({"/all","/"})
+    @GetMapping({"/all","/","/*"})
     public String mostrarAll(Model model){
         model.addAttribute("clientes", r.findAll());
         return "home";
@@ -30,7 +31,7 @@ public class MainController {
     @PostMapping("/add")
     public String addNew(@ModelAttribute Cliente cliente){
         r.save(cliente);
-        return "redirect:/all";
+        return "redirect:/admin/all";
     }
 
 }

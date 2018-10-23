@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
 
 </head>
 <body>
@@ -28,6 +28,7 @@
                         <th>
                             Descripcion
                         </th>
+                    <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -36,11 +37,12 @@
                         <td th:text="${cliente.name}"></td>
                         <td th:text="${cliente.email}"></td>
                         <td th:text="${cliente.observations}"></td>
+                        <td><input type="button" class="btn btn-outline-danger" value="Eliminar"></td>
                     </tr>
                     </tbody>
                 </table>
 
-                <a href="/add"><button type="button" class="btn btn-primary" >
+                <a href="/admin/add"><button type="button" class="btn btn-primary" >
                     Nuevo Cliente
                 </button></a>
 

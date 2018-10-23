@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
 
 </head>
 <body>
@@ -28,19 +28,21 @@
                         <th>
                             Descripcion
                         </th>
+                    <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="table-success" th:each="cliente : ${clientes}">
+                    <tr id="row+${cliente.id}" class="table-success" th:each="cliente : ${clientes}">
                         <td th:text="${cliente.id}"></td>
                         <td th:text="${cliente.name}"></td>
                         <td th:text="${cliente.email}"></td>
                         <td th:text="${cliente.observations}"></td>
+                        <td><input type="button" class="btn btn-outline-danger" value="Eliminar"></td>
                     </tr>
                     </tbody>
                 </table>
 
-                <a href="/add"><button type="button" class="btn btn-primary" >
+                <a href="/admin/add"><button type="button" class="btn btn-primary" >
                     Nuevo Cliente
                 </button></a>
 
